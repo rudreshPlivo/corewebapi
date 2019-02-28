@@ -15,10 +15,12 @@ namespace CoreWebAPI
         public static void Main(string[] args)
         {
             CreateWebHostBuilder(args).Build().Run();
+            var config = new ConfigurationBuilder().AddEnvironmentVariables("").Build();
+
         }
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
-            WebHost.CreateDefaultBuilder(args)
+             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>();
     }
 }
